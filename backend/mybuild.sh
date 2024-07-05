@@ -11,18 +11,18 @@ mv ../frontend/dist src/main/resources/static
 ./gradlew bootJar
 
 # build image
-docker build -t ybk0215/function .
+docker build -t jinjin11/function .
 
 # push image
-docker push ybk0215/function
+docker push jinjin11/function
 
 # remote 에서
 
 # 컨테이너 멈추고
-ssh -i src/main/resources/secret/key0527.pem ubuntu@3.39.193.68 'docker stop function'
+ssh -i src/main/resources/secret/key0527.pem ubuntu@54.180.228.71 'docker stop function'
 # 컨테이너 삭제
-ssh -i src/main/resources/secret/key0527.pem ubuntu@3.39.193.68 'docker rm function'
+ssh -i src/main/resources/secret/key0527.pem ubuntu@54.180.228.71 'docker rm function'
 # pull image
-ssh -i src/main/resources/secret/key0527.pem ubuntu@3.39.193.68 'docker pull ybk0215/function'
+ssh -i src/main/resources/secret/key0527.pem ubuntu@54.180.228.71 'docker pull jinjin11/function'
 # 컨테이너 실행
-ssh -i src/main/resources/secret/key0527.pem ubuntu@3.39.193.68 'docker run -d -p 8080:8080 --restart always --name function ybk0215/function'
+ssh -i src/main/resources/secret/key0527.pem ubuntu@54.180.228.71 'docker run -d -p 8080:8080 --restart always --name function jinjin11/function'
