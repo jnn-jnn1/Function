@@ -36,6 +36,8 @@ public class Oauth2UserService extends DefaultOAuth2UserService {
             response = new GoogleUserInfo((Map) oAuth2User.getAttributes());
         }
 
+        System.out.println("SNS 로그인 실행");
+
         User user = mapper.selectUserByEmail(response.getEmail());
         if (user == null) {
             user = User
