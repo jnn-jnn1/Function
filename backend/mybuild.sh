@@ -26,3 +26,5 @@ ssh -i src/main/resources/secret/key0527.pem ubuntu@54.180.228.71 'docker rm fun
 ssh -i src/main/resources/secret/key0527.pem ubuntu@54.180.228.71 'docker pull jinjin11/function'
 # 컨테이너 실행
 ssh -i src/main/resources/secret/key0527.pem ubuntu@54.180.228.71 'docker run -d -p 8080:8080 --restart always --name function jinjin11/function'
+# 필요없는 이미지 삭제
+ssh -i src/main/resources/secret/key0527.pem ubuntu@54.180.228.71 'docker image prune -f'
